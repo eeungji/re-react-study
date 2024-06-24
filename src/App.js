@@ -5,7 +5,6 @@ import Cart from './components/Food/Cart/Cart';
 import CartProvider from './store/CartProvider';
 
 const App = () => {
-
   // 장바구니 모달을 열고 닫는 상태변수
   const [cartIsShown, setCartIsShown] = useState(false);
 
