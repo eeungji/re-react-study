@@ -1,8 +1,11 @@
 import React from "react";
 import styles from './EventItem.module.scss';
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useSubmit } from "react-router-dom";
 
 const EventItem = ({ event }) => {
+
+  // action함수를 트리거하는 2번째 방법
+  const submit = useSubmit();
 
   const {
     'event-id': id,
@@ -19,17 +22,12 @@ const EventItem = ({ event }) => {
 
   const deleteHandler =  (e) => {
 
-    if (!window.confirm('정말 삭제하시겠습니까?')) return;
-
-    // console.log('id: ', id);
-    (async() => {
-      await fetch(`http://localhost:8282/events/${id}`, {
-        method: 'DELETE'
-      });
-      navigate('/events');
-
-    })();
-  
+    // action을 트리거
+    submit(null, { method: 'DELETE' });
+    /*
+      <Form method='delete'>
+    */
+    
   };
   
   return (
@@ -40,7 +38,9 @@ const EventItem = ({ event }) => {
       <p>{description}</p>
       <menu className={styles.actions}>
         <Link to="edit">Edit</Link>
-        <button onClick={deleteHandler}>Delete</button>
+        <button 
+          onClick={deleteHandler}
+        >Delete</button>
       </menu>
     </article>
   );
