@@ -26,11 +26,10 @@ const EventItem = ({ event }) => {
       await fetch(`http://localhost:8282/events/${id}`, {
         method: 'DELETE'
       });
-    })();
-    
-    setTimeout(() => {
       navigate('/events');
-    }, 200);
+
+    })();
+  
   };
   
   return (
