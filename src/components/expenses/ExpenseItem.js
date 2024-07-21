@@ -33,14 +33,17 @@ const ExpenseItem = ({ date, title, price: exPrice}) => {
   // 원화 표기법으로 변환
   const formattedPrice = new Intl.NumberFormat('ko-KR').format(exPrice);
 
+
   return (
-    <div className='expense-item'>
-      <ExpenseDate />
-      <div className='expense-item__description'>
-        <h2>{title}</h2>
-        <div className='expense-item__price'>{formattedPrice}</div>
-      </div>
-    </div>
+      //<card>의 {children}
+      <Card className='expense-item'>
+        <ExpenseDate />
+        <div className='expense-item__description'>
+          <h2>{title}</h2>
+          <div className='expense-item__price'>{formattedPrice}</div>
+        </div>
+      </Card>
+
   )
 }
 

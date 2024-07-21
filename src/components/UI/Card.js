@@ -1,9 +1,12 @@
 import React from 'react'
 import './Card.css';
 
+
+import React from 'react'
+
 const Card = ({ className, children }) => {
 
-  const cn = 'card ' + className;
+  const cn = 'card' + className;
 
   return (
     <div className={cn}>
@@ -13,3 +16,16 @@ const Card = ({ className, children }) => {
 }
 
 export default Card
+
+// const Card = ({ className, children }) => {
+
+//   const cn = 'card ' + className;
+
+//   return (
+//     <div className={cn}>
+//       {children}
+//     </div>
+//   )
+// }
+
+// export default Card
