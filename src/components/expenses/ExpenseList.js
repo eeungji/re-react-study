@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
+
 import ExpenseItem from './ExpenseItem';
 import ExpenseFilter from './ExpenseFilter';
 import './ExpenseList.css';
-import ExpenseChart from '../chart/ExpenseChart';
+// import ExpenseChart from '../chart/ExpenseChart';
 
-
-
-import React from 'react'
+import React from 'react';
 
 const ExpenseList = ({ expenses }) => {
   return (
